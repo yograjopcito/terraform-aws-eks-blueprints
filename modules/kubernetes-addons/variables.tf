@@ -1006,6 +1006,21 @@ variable "grafana_helm_config" {
   type        = any
   default     = null
 }
+variable "nops_helm_config" {
+  description = "Kubernetes nOps Helm Chart config"
+  type        = any
+  default     = null
+}
+variable "enable_nops_k8s_agent" {
+  description = "Enable nOps add-on"
+  type        = bool
+  default     = false
+}
+variable "nops_irsa_policies" {
+  description = "IAM policy ARNs for nOps IRSA"
+  type        = list(string)
+  default     = []
+}
 
 variable "grafana_irsa_policies" {
   description = "IAM policy ARNs for grafana IRSA"

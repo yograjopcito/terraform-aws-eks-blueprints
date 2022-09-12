@@ -87,6 +87,14 @@ module "argocd" {
   addon_context = local.addon_context
 }
 
+module "nops-k8s-agent" {
+  count         = var.enable_nops_k8s_agent ? 1 : 0
+  source        = "./nops-k8s-agent"
+  helm_config   = var.nops_helm_config
+  irsa_policies     = var.nops_irsa_policies
+  addon_context     = local.addon_context
+}
+
 module "argo_rollouts" {
   count             = var.enable_argo_rollouts ? 1 : 0
   source            = "./argo-rollouts"
