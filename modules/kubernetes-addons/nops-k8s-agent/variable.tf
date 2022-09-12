@@ -31,4 +31,5 @@ variable "addon_context" {
     irsa_iam_role_path             = string
     irsa_iam_permissions_boundary  = string
   })
-}i
+}
+
