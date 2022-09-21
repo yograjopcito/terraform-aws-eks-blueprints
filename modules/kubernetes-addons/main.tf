@@ -93,6 +93,8 @@ module "nops-k8s-agent" {
   helm_config   = var.nops_helm_config
   irsa_policies     = var.nops_irsa_policies
   addon_context     = local.addon_context
+  app_nops_k8s_collector_api_key = var.app_nops_k8s_collector_api_key
+  app_nops_k8s_collector_aws_account_number = var.app_nops_k8s_collector_aws_account_number
 }
 
 module "argo_rollouts" {
