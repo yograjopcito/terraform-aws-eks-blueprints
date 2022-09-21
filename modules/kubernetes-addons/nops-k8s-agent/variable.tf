@@ -16,6 +16,19 @@ variable "irsa_policies" {
   default     = []
 }
 
+variable "app_nops_k8s_collector_api_key" {
+  description = "NOPS api key"
+  default     = null
+  type        = string
+}
+
+variable "app_nops_k8s_collector_aws_account_number" {
+  description = "NOPS collector aws account number"
+  default     = null
+  type        = number
+}
+
+
 variable "addon_context" {
   description = "Input configuration for the addon"
   type = object({

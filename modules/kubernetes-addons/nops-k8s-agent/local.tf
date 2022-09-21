@@ -18,7 +18,10 @@ locals {
 
   default_helm_values = [templatefile("${path.module}/values.yaml", {
     operating_system = "linux"
-    region           = var.addon_context.aws_region_name
+    region           = var.addon_context.aws_region_name,
+    app_nops_k8s_collector_api_key = var.app_nops_k8s_collector_api_key,
+    app_nops_k8s_collector_aws_account_number = var.app_nops_k8s_collector_aws_account_number
+
   })]
 
   set_values = [
